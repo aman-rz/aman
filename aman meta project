@@ -1,0 +1,53 @@
+(function() {
+    let nftCollection = [];
+    function mintNFT(name, eyecolour, shirtType, bling) {
+    const nft = {
+    name: name,
+    eyeColor: eyecolour,
+    shirtType: shirtType,
+    bling: bling
+    };
+        nftCollection.push(nft);
+    }
+    function listNFTs() {
+        nftCollection.forEach((nft, index) => {
+            console.log(`NFT ${index + 1}:`);
+            console.log(`Name: ${nft.name}`);
+            console.log(`Eye Colour: ${nft.eyeColor}`);
+            console.log(`Shirt Type: ${nft.shirtType}`);
+            console.log(`Bling: ${nft.bling}`);
+            console.log('------------------------');
+        });
+    }
+    function getTotalSupply() {
+        return nftCollection.length;
+    }
+    mintNFT('Cool Cat', 'blue', 'T-shirt', 'gold chain');
+    mintNFT('Stylish Dog', 'brown', 'sweater', 'silver ring');
+    mintNFT('Fancy Fox', 'green', 'jacket', 'diamond earring');
+    listNFTs();
+    console.log('Total NFTs minted:', getTotalSupply());
+})();
+
+
+Output:
+
+NFT 1:
+Name: Cool Cat
+Eye Colour: blue
+Shirt Type: T-shirt
+Bling: gold chain
+------------------------
+NFT 2:
+Name: Stylish Dog
+Eye Colour: brown
+Shirt Type: sweater
+Bling: silver ring
+------------------------
+NFT 3:
+Name: Fancy Fox
+Eye Colour: green
+Shirt Type: jacket
+Bling: diamond earring
+------------------------
+Total NFTs minted: 3
